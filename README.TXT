@@ -13,4 +13,4 @@ USER INSTRUCTIONS:
 
 Link to dataset used: https://www.kaggle.com/datasets/tfisthis/global-ai-tool-adoption-across-industries/data 
 
-To run program please download the dataset as csv, and place it in the same folder as the java files, then run the JavaFX Application.
+To run program please download the dataset as csv, and place it in the same folder as the java files, then run the JavaFX Application, in BlueJ after downloading GitHub files.
