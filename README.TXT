@@ -4,9 +4,13 @@ Tell the reader (someone who does not know anything about this project)
 all he/she needs to know. The comments should usually include at least:
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
+PROJECT TITLE: AP CSA Dataset Lab Project Unit 4 AI Usage Demographics
 PURPOSE OF PROJECT:
-VERSION or DATE:
+VERSION or DATE: 3/26/26
 HOW TO START THIS PROJECT:
-AUTHORS:
+AUTHORS: Aaditya Sadhvani
 USER INSTRUCTIONS:
+
+Link to dataset used: https://www.kaggle.com/datasets/tfisthis/global-ai-tool-adoption-across-industries/data 
+
+To run program please download the dataset as csv, and place it in the same folder as the java files, then run the JavaFX Application.
