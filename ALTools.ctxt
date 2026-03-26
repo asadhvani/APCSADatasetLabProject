@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ALTools
+comment1.params=inpt
+comment1.target=java.util.ArrayList\ getIndustryCol(java.util.ArrayList)
+comment2.params=inpt
+comment2.target=java.util.ArrayList\ removeDuplicates(java.util.ArrayList)
+numComments=3
