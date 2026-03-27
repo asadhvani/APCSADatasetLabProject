@@ -40,6 +40,7 @@ public class AIUsageFX extends Application{
       yAxis.setLabel("Adoption Rate");
       
       ArrayList<String> industries = ALTools.removeDuplicates(ALTools.getIndustryCol(entries));
+      ArrayList<String> countries = ALTools.removeDuplicates(ALTools.getCountryCol(entries));
       
       //XYChart.Series series1 = new XYChart.Series();
       //series1.setName("Amount of Net Carbs");      
@@ -79,7 +80,9 @@ public class AIUsageFX extends Application{
       
       //Because there are multiple entries, for each country & adoption rate, change alg to place in an arraylist, and get avg
       //Optimize to reduce computational complexity to ensure all rows can be looped through
-      for (int i=0; i<2000; i++){
+
+      /*
+      for (int i=0; i<entries.size(); i++){
           Entry e = entries.get(i);
           String ind = e.getIndustry();
           if (ind.equals("Technology")){
@@ -100,12 +103,29 @@ public class AIUsageFX extends Application{
               AIAdoptionRet.getData().add(new XYChart.Data(e.getCountry(), e.getAdoptionRate()));              
           }
       }
-      
-      //Industries: [Technology, Transportation, Manufacturing, Healthcare, Education, Finance, Agriculture, Retail]
+       */
+
+       for (int i=0; i<entries.size(); i++){
+           Entry e = entries.get(i);
+           AdoptionRate.addAdoptionRate(e.getCountry(), e.getIndustry(), e.getAdoptionRate());
+       }
+       for (String c : countries){
+           AIAdoptionTech.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Technology")));
+           AIAdoptionTrans.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Transportation")));
+           AIAdoptionManuf.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Manufacturing")));
+           AIAdoptionHealth.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Healthcare")));
+           AIAdoptionEduc.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Education")));
+           AIAdoptionFin.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Finance")));
+           AIAdoptionAgric.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Agriculture")));
+           AIAdoptionRet.getData().add(new XYChart.Data(c, AdoptionRate.getAvg(c, "Retail")));
+       }
+       //Industries: [Technology, Transportation, Manufacturing, Healthcare, Education, Finance, Agriculture, Retail]
     
       
-      System.out.println(industries.size());
-      System.out.println(industries);
+      //System.out.println(industries.size());
+      //System.out.println(industries);
+      //System.out.println(countries);
+      //System.out.println(countries.size());
       Scene scene  = new Scene(bc,800,600);
       
       bc.getData().addAll(AIAdoptionTech);

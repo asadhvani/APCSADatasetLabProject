@@ -10,6 +10,15 @@ public class ALTools{
         }
         return result;
     }
+    public static ArrayList<String> getCountryCol(ArrayList<Entry> inpt){
+        ArrayList<String> result = new ArrayList<>();
+
+        for (int i=0; i<inpt.size(); i++){
+            String country = inpt.get(i).getCountry();
+            result.add(country);
+        }
+        return result;
+    }
     public static ArrayList<String> removeDuplicates(ArrayList<String> inpt){
         ArrayList<String> seen = new ArrayList<>();
         for (int i=0; i<inpt.size(); i++){
